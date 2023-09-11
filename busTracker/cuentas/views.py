@@ -36,7 +36,7 @@ def signupaccount(request):
 
             login(request, user)
 
-            return redirect('home')
+            return redirect('login')
 
 
 def signupaccount(request):
@@ -50,7 +50,7 @@ def signupaccount(request):
                     password=request.POST['password1'])
                 user.save()
                 login(request, user)
-                return redirect('home')
+                return redirect('login')
             except IntegrityError:
                 return render(request,
                               'signupaccount.html',
@@ -75,5 +75,4 @@ def loginaccount(request):
             return redirect('home')
 
 
-def home(request):
-    return render(request, 'home.html')
+
